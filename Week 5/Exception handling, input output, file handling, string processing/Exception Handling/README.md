@@ -14,16 +14,17 @@
 
 # Handling exceptions
 
+```python
 try:
-...   (code where error may occur)
+...   //(code where error may occur)
 ...
 except IndexError:
-...   (what to do if IndexError occurs)
+...   //(what to do if IndexError occurs)
 except (NameError, KeyError)
-...   (common code to handle multiple errors)
+...   //(common code to handle multiple errors)
 except:
-...   (catch all other exceptions)
+...   //(catch all other exceptions)
 else:
-...   (Execute if try terminates normally, no errors)
+...   //(Execute if try terminates normally, no errors)
 
    
