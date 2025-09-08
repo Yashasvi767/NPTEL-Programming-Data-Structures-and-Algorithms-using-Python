@@ -4,6 +4,7 @@
 - Move pivot between lower and upper partition
 - Recursively sort the two partitions
 
+
 # Analysis of Quicksort
 - Worst case O(n<sup>2</sup>)
   - Pivot is either max or min
@@ -12,7 +13,9 @@
    - Already sorted array is worst case input
      
 - Randomization
-  - 
+  - worst case arises because of fixed choice of pivot, we typically choose the first element
+  - This can happen for any fixed strategy(last element, midpoint), can work backwards to construct O(n<sup>2</sup>) worst case.
+  - Instead, we will choose the pivot randomly, pick any index in range(0,n) with uniform probability and theregore expected running time is again O(n log n).  
 
  - Average case O(nlogn)
    - All permutations of n values, each equally likely
