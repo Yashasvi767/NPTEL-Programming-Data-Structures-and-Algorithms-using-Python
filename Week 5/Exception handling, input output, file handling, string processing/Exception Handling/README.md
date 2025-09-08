@@ -26,5 +26,23 @@ except:
 ...   //(catch all other exceptions)
 else:
 ...   //(Execute if try terminates normally, no errors)
+```
+
+Traditional approach
+```python
+if b in scores.keys():
+  scores[b].append(s)
+else:
+  scores[b]=[s]
+```
+
+Using exceptions
+```python
+try:
+  scores[b].append(s)
+except keyError:
+  scores[b] = [s]
+```
+
 
    
