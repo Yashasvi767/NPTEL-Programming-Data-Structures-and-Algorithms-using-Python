@@ -19,19 +19,64 @@
 - Append "a" : append to an existing file
 
 ## Read through file handle
-```python
-contents = fh.read()
+ ```python
+1. contents = fh.read()
 ```
-- Reads through file into name as a single string
+Reads through file into name as a single string
+
 
 ```python
-contents = fh.readline()
+2. contents = fh.readline()
 ```
-- Reads onle line into names-lines end with '\n'
-  - String includes '\n', unlike input()
+Reads only line into names-lines end with '\n', string includes '\n', unlike input()
 
 ```python
-contents = fh.readlines()
+3. contents = fh.readlines()
 ```
-- Reads entire file as lists of strings
-  - Each string is one line, endling with '\n' 
+Reads entire file as lists of strings, each string is one line, endling with '\n' 
+
+```python
+4. fh.seek(n)
+```
+moves pointer to position n
+
+eg. 
+```python 
+block=fh.read(12)
+```
+reads a fixed number of characters
+
+## End of file
+- when fh.read() or fh.readlines() return empty string "", that means that the file has ended.
+
+## Writing to a file
+```python
+1. fh.write(s)
+```
+write string s to file, returns number of characters written, include '\n' explicitly to go to a new line
+
+```python
+2. fh.writelines(l)
+```
+write a list of lines l to file, must include '\n' explicitly for each string
+
+```python
+3. fh.close()
+```
+ flushes output buffer and decouples file handle, all pending writes copied to disk
+
+ ```python
+4. fh.flush()
+```
+manually forces write to disk
+
+# Examples
+1. Copying a file
+   ```python
+   infile = open("input.txt", "r")
+   outfile = open("output.txt","w")
+   contents = infile.readlines()
+   outfile.write(contents)
+   infile.close()
+   outfile.close()
+   ```
